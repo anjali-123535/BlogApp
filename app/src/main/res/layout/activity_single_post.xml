@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SinglePostActivity"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/postimage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/add_img_btn" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="title"
+
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:id="@+id/posttitle"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:text="desc"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif-condensed"
+
+            android:layout_height="wrap_content"
+            android:id="@+id/postdesc" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove post"
+        android:id="@+id/btn_remove"
+        android:layout_gravity=""
+        android:visibility="invisible"/>
+    </LinearLayout>
