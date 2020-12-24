@@ -108,7 +108,7 @@ private ProgressDialog progressDialog;
                                     reference.child("image_url").setValue(uri.toString());
                                     reference.child("user_id").setValue(mCurrentUser.getUid());
                                     reference.child("name").setValue(snapshot.child("name").getValue());
-                                    reference.child("posted").setValue(sdate);
+                                    reference.child("posted").setValue(sdate.substring(0,11));
                                     Log.d(TAG, "succcesfully download the imageurl "+uri.toString());
                                     onBackPressed();
                                 }

@@ -54,8 +54,14 @@ FirebaseRecyclerOptions<Blog> recyclerOptions;
                 if(firebaseAuth.getCurrentUser()==null)
                 {
                     Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-                    // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                    // Closing all the Activities from stack
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                    // Add new Flag to start new Activity
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    finish();
                 }
             }
         };
@@ -150,6 +156,7 @@ When the current user changes*/
        // checkUserAcccount();
         Log.d(TAG,"In onStart()");
         adapter.startListening();
+        //checkUserAcccount();
     }
 
     @Override
@@ -235,12 +242,16 @@ ImageButton btn_like;
                 break;
             case R.id.action_logout:
                 mAuth.signOut();
+                Intent intent=new Intent(this,LoginActivity.class);
+               // Closing all the Activities
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                // Add new Flag to start new Activity
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+               // finish();
         }
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 }

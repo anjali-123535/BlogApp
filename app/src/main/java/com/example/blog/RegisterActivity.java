@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView txt_name,txt_email,txt_pass;
 Button btn_register;
 FirebaseAuth mAuth;
-Uri mImageuri;
+Uri mImageuri=null;
 ImageView img_user;
 ProgressDialog progressDialog;
 StorageReference photoreference;
@@ -114,6 +114,10 @@ DatabaseReference reference;
                                 });
                             }
                         });
+                    }
+                    else{
+                        progressDialog.dismiss();
+                        Toast.makeText(RegisterActivity.this, "account not setup successfuly", Toast.LENGTH_SHORT).show();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {

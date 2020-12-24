@@ -181,7 +181,10 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Intent mainintent=new Intent(LoginActivity.this,MainActivity.class);
                     mainintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    // Add new Flag to start new Activity
+                    mainintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(mainintent);
+                    finish();
                 }
                 else {
                     Toast.makeText(LoginActivity.this,"Accoutn Setup required",Toast.LENGTH_SHORT).show();
@@ -199,10 +202,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+ /*   @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
+    */
+
 
     void setUpUIViews()
     {
